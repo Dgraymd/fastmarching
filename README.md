@@ -3,6 +3,20 @@ N-Dimensional Fast Marching Method V1.0
 Authors: 
  - Javier V. Gomez javvgomez __at__ gmail.com www.javiervgomez.com
  - Jose Pardeiro jose.pardeiro __at__ gmail.com
+ - Pablo Gely
+
+FMM Versions:
+
+- Fast Marching Method (FMM) with Binary Queue and Fibonacci Queue.
+- Simplified Fast Marhching Method (SFMM, FMM with a simple priority queue).
+- Fast Marching Square Method (FM2).
+- Fast Marching Square Star (FM2*) FM2 with CostToGo heuristics.
+- Fast Marching Square Directioanl (FM2Dir)
+
+O(n) FMM versions:
+- Group Marching Method (GMM).
+- Untidy Fast Marching Method (By Yatziv et al, circular queue).
+- Fast Iterative Method (FIM).
 
 
 ===========================
@@ -77,8 +91,10 @@ Although there are a lot of folders, they are quite simple. It is organized this
 + console: the console class.
 + data: additional files and maps to test.
 + doc: doxygen documentation.
-+ fmdata: clases related to the data types of the Fast Marching Method.
++ examples: easy examples to understand how to use the code.
++ fm2: Fast Marching Square (FM2) algorithms.
 + fmm: Fast Marching Algorithms.
+  + fmdata: classes related to the data types of the Fast Marching Method and other algorithms.
 + gradientdescent: under development.
 + io: input/output helper classes.
 + ndgridmap: main container.
@@ -102,6 +118,7 @@ TODO:
 
 In the top part of each file there are specific TODO comments.
 
+- Reimplement FM2* as FM2: as a high level FMM user, with underlying FMM templated.
 - Restructure the folder and the CMake files in order to properly have examples and that stuff.
 - Substitute arg parsing with boost_options.
 - Remove relative file dependencies (#include "../../fmm", filename = "../../data", CMakeLists.txt deps, etc).

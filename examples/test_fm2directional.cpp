@@ -7,14 +7,14 @@
 #include <string>
 #include <algorithm>
 
-#include "../fmdata/fmdirectionalcell.h"
+#include "../fmm/fmdata/fmdirectionalcell.h"
 #include "../ndgridmap/ndgridmap.hpp"
 #include "../console/console.h"
-#include "../fm2directional/fastmarching2directional.hpp"
-#include "../fmdata/fmfibheap.hpp"
-#include "../fmdata/fmpriorityqueue.hpp"
-#include "../fmdata/fmdaryheap.hpp"
-#include "../fmdata/fmdaryheap.hpp"
+#include "../fm2/fastmarching2directional.hpp"
+#include "../fmm/fmdata/fmfibheap.hpp"
+#include "../fmm/fmdata/fmpriorityqueue.hpp"
+#include "../fmm/fmdata/fmdaryheap.hpp"
+#include "../fmm/fmdata/fmdaryheap.hpp"
 #include "../io/maploadertext.hpp"
 
 using namespace std;
@@ -75,7 +75,7 @@ int main(int argc, const char ** argv)
     fm2directional.computeFM2Directional();
         end = system_clock::now();
         time_elapsed = duration_cast<milliseconds>(end-start).count();
-        cout << "\tElapsed FM2Directiona - Binary heap time:\t" << time_elapsed << " ms" << endl;
+        cout << "\tElapsed FM2Directional - Binary heap time:\t" << time_elapsed << " ms" << endl;
 
     // Using priority queue implies the use of the SFMM. Priority queue uses by default FMCell.
     FastMarching2Directional<FMGrid2D, FMPriorityQueue<> > sfm2directional; //Choosing the default cell class.
